@@ -33,3 +33,20 @@ ai-soc-analyst/
 ├── log_consumer.py       # Kafka consumer & Elasticsearch indexer
 ├── docker-compose.yml    # Kafka & Elasticsearch container network
 └── requirements.txt      # Python dependencies list
+
+## 📋 Prerequisites
+Before running this project locally, ensure you have the following installed:
+* **Docker & Docker Compose** (For running Kafka and Elasticsearch)
+* **Python 3.10+** (For the backend API and data pipelines)
+* **Node.js v18+ & npm** (For the Next.js frontend dashboard)
+
+## 🔑 Environment Configuration
+Create a `.env` file in the root directory to securely store your AI API credentials. Do not commit this file to version control.
+```env
+GROQ_API_KEY=your_groq_api_key_here
+
+## 🛠️ How to Run Locally
+
+**1. Start the Infrastructure (Docker)**
+```bash
+docker-compose up -d
