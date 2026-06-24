@@ -45,12 +45,40 @@ Before running this project locally, ensure you have the following installed:
 Create a `.env` file in the root directory to securely store your AI API credentials. Do not commit this file to version control.
 ```env
 GROQ_API_KEY=your_groq_api_key_here
+```
 
 ## 🛠️ How to Run Locally
 
 **1. Start the Infrastructure (Docker)**
 ```bash
 docker-compose up -d
+```
+**2. Start the Data Pipeline**
+Open two separate terminal windows and run:
+```bash
 python3 log_generator.py
 python3 log_consumer.py
+```
+**3. Start the Backend API**
+Open a new terminal window and run:
+```bash
+uvicorn api:app --reload
+```
+
+**4. Start the Frontend UI**
+Open a new terminal window, navigate to the frontend folder, and start the development server:
+```bash
+cd frontend
+npm run dev
+```
+The dashboard will now be live at http://localhost:3000.
+
+**5. Generate AI Incident Report**
+To trigger the AI to analyze the live database and print a correlated attack report:
+```bash
+python3 ai_analyst.py
+```
+
+
+
 
