@@ -33,6 +33,7 @@ ai-soc-analyst/
 ├── log_consumer.py       # Kafka consumer & Elasticsearch indexer
 ├── docker-compose.yml    # Kafka & Elasticsearch container network
 └── requirements.txt      # Python dependencies list
+```
 
 ## 📋 Prerequisites
 Before running this project locally, ensure you have the following installed:
@@ -50,3 +51,6 @@ GROQ_API_KEY=your_groq_api_key_here
 **1. Start the Infrastructure (Docker)**
 ```bash
 docker-compose up -d
+python3 log_generator.py
+python3 log_consumer.py
+
